@@ -36,6 +36,7 @@
     data () {
       return {
         computer: [],
+        ids: ["http://image.smartisanos.cn/resource/f99eb08b801736e22479e50470567146.png", "http://image.smartisanos.cn/resource/bf99a58daeb23de22cbca066de5e2af9.png", "http://image.smartisanos.cn/resource/6130f99fbf9fc67f2f39eaf9652a1e9a.png", "http://image.smartisanos.cn/resource/0b55e64f8a8982febe19ca9d1b790b9c.png", "http://image.smartisanos.cn/resource/fee4687204600b791985174e7df0b124.png", "http://image.smartisanos.cn/resource/c2b673ba1f71dc2e7d104b5d7964a066.png", "http://image.smartisanos.cn/resource/3c0c6c34b7efd2b559e021b4f7373273.png", "http://image.smartisanos.cn/resource/1fbf7021c394bc9c0db57da9471b7fc8.png"],
         busy: false,
         timer: null,
         sortType: 1,
@@ -61,6 +62,8 @@
         getComputer(params).then(res => {
           if (res.result.count) {
             let data = res.result.data
+            let idList = this.ids
+            //  data = data.filter(item=>{return this.idContain(idList,item);})
             if (flag) {
               this.computer = this.computer.concat(data)
             } else {
@@ -72,6 +75,21 @@
           }
         })
       },
+      idContain(idList,item){
+        for (const key in idList) {
+         
+            const element = idList[key];
+            let path=item.productImageBig;
+            console.log(path.substring(path.indexOf('resource/')+'resource/'.length,path.indexOf('.jpg')))
+            if(element==path){
+              
+              return true;
+            }
+          
+        }
+        return false;
+      },
+      
       // 默认排序
       reset () {
         this.sortType = 1

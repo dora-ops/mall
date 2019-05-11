@@ -12,6 +12,11 @@ export const loginOut = (params) => {
 export const userInfo = (params) => {
   return http.fetchPost(`${baseUrl}/users/userInfo`, params)
 }
+
+// 用户列表信息
+export const userInfoList = (params) => {
+    return http.fetchPost(`${baseUrl}/users/userInfoList`,params)
+  }
 // 注册账号
 export const register = (params) => {
   return http.fetchPost(`${baseUrl}/users/register`, params)

@@ -1,6 +1,6 @@
 import http from './public'
 const baseUrl = '/api'
-// 电脑列表
+// 商品列表
 export const getComputer = (params) => {
   return http.fetchGet(`${baseUrl}/goods/computer`, params)
 }
@@ -60,7 +60,14 @@ export const orderList = (params) => {
 export const productDet = (params) => {
   return http.fetchGet(`${baseUrl}/goods/productDet`, params)
 }
+// 商品增加
+export const productAdd = (params) => {
+    return http.fetchPost(`${baseUrl}/goods/productAdd`, params)
+  }
 // 删除订单
 export const delOrder = (params) => {
   return http.fetchPost(`${baseUrl}/users/delOrder`, params)
 }
+
+// 商品列表
+export const productList =getComputer

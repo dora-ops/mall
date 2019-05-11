@@ -114,9 +114,15 @@ export default {
   },
   // 记录用户信息
   [RECORD_USERINFO] (state, info) {
+    const baseImg='../static/images/'
+    let path=info.info.avatar==undefined?'':info.info.avatar;
+    info.avatar=baseImg+path.substring(path.lastIndexOf('/')+1,path.length)
+    
     state.userInfo = info
     state.login = true
     setStore('userInfo', info)
+    state.userInfo.info.avatar=info.avatar
+    
   },
   // 获取用户信息
   [GET_USERINFO] (state, info) {

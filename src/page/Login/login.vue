@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="dialog dialog-shadow" style="display: block; margin-top: -362px;">
         <div class="title" v-if="loginPage">
-          <h4>使用 Smartisan ID 登录官网</h4></div>
+          <h4>使用 餐饮商品交易平台</h4></div>
         <div v-if="loginPage" class="content">
           <ul class="common-form">
             <li class="username border-1p">
@@ -18,7 +18,7 @@
             </li>
             <li style="text-align: right" class="pr">
               <span class="pa" style="top: 0;left: 0;color: #d44d44">{{ruleForm.errMsg}}</span>
-              <a href="javascript:;" style="padding: 0 5px" @click="loginPage = false">注册 Smartisan ID</a>
+              <a href="javascript:;" style="padding: 0 5px" @click="loginPage = false">注册 中环 ID</a>
             </li>
           </ul>
           <!--登陆-->

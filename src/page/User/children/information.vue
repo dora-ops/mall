@@ -135,7 +135,8 @@
                 updateheadimage({imageSrc: path}).then(res1 => {
                   if (res1.status === '0') {
                     let info = this.userInfo
-                    info.avatar = path
+                    const baseImg='../static/images/'
+                    info.avatar =baseImg+path.substring(path.lastIndexOf('/')+1,path.length)  
                     this.RECORD_USERINFO({info: info})
                     alert('更换成功')
                     this.editAvatarShow = false

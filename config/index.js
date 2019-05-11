@@ -30,9 +30,16 @@ module.exports = {
     proxyTable: {
       '/api/': {
         target: 'http://127.0.0.1:3333',  // 请求本地 需要clone node-api项目
-        // target: 'http://mall.yucccc.com' // 请求线上 可直接运行
+        // target: 'http://mall.yucccc.com', // 请求线上 可直接运行
+        // target:'https://www.smartisan.com',
         changeOrigin: true
-      }
+      },
+    //   '/static/images': {
+    //     target: 'http://127.0.0.1:3333',  // 请求本地 需要clone node-api项目
+    //     // target: 'http://mall.yucccc.com', // 请求线上 可直接运行
+    //     // target:'https://www.smartisan.com',
+    //     changeOrigin: true
+    //   }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
