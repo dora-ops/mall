@@ -127,6 +127,7 @@
   import { mapMutations, mapState } from 'vuex'
   import { getCartList, cartDel } from '/api/goods'
   import { loginOut } from '/api/index'
+    import { navList } from '../sqlMap'
   import { setStore, removeStore } from '/utils/storage'
 
   export default {
@@ -140,22 +141,7 @@
       return {
         user: {},
         // 列表
-        navList: [{
-          text: '我的订单',
-          link: '/user/orderList'
-        }, {
-          text: '账号资料',
-          link: '/user/information'
-        }, {
-          text: '收货地址',
-          link: '/user/addressList'
-        }, {
-          text: '售后服务',
-          link: '/user/support'
-        }, {
-          text: '我的优惠',
-          link: '/user/coupon'
-        }],
+        navList: navList,
         st: false,
         // 头部购物车显示
         cartShow: false,

@@ -64,6 +64,10 @@ export const productDet = (params) => {
 export const productAdd = (params) => {
     return http.fetchPost(`${baseUrl}/goods/productAdd`, params)
   }
+  // 商品增加
+export const productDel = (params) => {
+    return http.fetchPost(`${baseUrl}/goods/productDel`, params)
+  }
 // 删除订单
 export const delOrder = (params) => {
   return http.fetchPost(`${baseUrl}/users/delOrder`, params)

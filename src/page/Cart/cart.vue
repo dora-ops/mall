@@ -54,7 +54,7 @@
                                    display: flex;
                                    align-items: center;
                                    justify-content: center;"
-                                 :limit="5"
+                                 :limit="500"
                                  @edit-num="EditNum"
                         >
                         </buy-num>

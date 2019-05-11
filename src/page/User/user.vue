@@ -31,18 +31,12 @@
   import YFooter from '/common/footer'
   import YHeader from '/common/header'
   import { mapState } from 'vuex'
+  import { nav } from '../../sqlMap'
   export default {
     data () {
       return {
         title: '我的订单',
-        nav: [
-          {name: '我的订单', path: 'orderList'},
-          {name: '账户资料', path: 'information'},
-          {name: '收货地址', path: 'addressList'},
-        //   {name: '我的优惠', path: 'coupon'},
-          {name: '用户管理', path: 'support'},
-          {name: '商品发布', path: 'aihuishou'}
-        ],
+        nav:nav ,
         editAvatar: true
       }
     },
@@ -55,6 +49,12 @@
       }
     },
     created () {
+        
+      var user= this.userInfo.info
+      if (user.userName=='admin') {
+          this.nav.push({name: '用户管理', path: 'support'})
+          this.nav.push( {name: '商品发布', path: 'aihuishou'})
+      }
       let path = this.$route.path.split('/')[2]
       this.nav.forEach(item => {
         if (item.path === path) {

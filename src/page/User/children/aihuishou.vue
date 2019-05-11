@@ -8,15 +8,16 @@
             <div class="name">{{item.productName}}</div>
             <div class="address-msg">{{item.salePrice}}</div>
             <div class="telephone">{{item.sub_title}}</div>
-            <div class="telephone">{{item.productImageBig}}</div>
+            <!-- <div class="telephone">{{item.productImageBig}}</div> -->
             <!-- <div class="telephone">{{item.productImageSmall[0]}}</div> -->
-            <div class="telephone">{{item.height}}</div>
-            <div class="telephone">{{item.width}}</div>
+            <!-- <div class="telephone">{{item.height}}</div>
+            <div class="telephone">{{item.width}}</div> -->
             <!-- <div class="telephone">{{item.url[0]}}</div> -->
-            <!-- <div class="operation">
-             
-              <a href="javascript:;" :data-id="item.addressId" @click="del(item.addressId,i)">删除</a>
-            </div> -->
+            <div class="operation">
+              <!-- <a href="javascript:;" @click="update(item)">修改</a> -->
+              <a href="javascript:;" :data-id="item.id" @click="del(item._id,i)">删除</a>
+            </div>
+           
           </div>
         </div>
         
@@ -64,7 +65,7 @@
   </div>
 </template>
 <script>
-  import { productList, addressUpdate, productAdd, addressDel } from '/api/goods'
+  import { productList, addressUpdate, productAdd, addressDel,productDel } from '/api/goods'
   import YButton from '/components/YButton'
   import YPopup from '/components/popup'
   import YShelf from '/components/shelf'
@@ -123,8 +124,8 @@
         this.popupOpen = false
       },
       // 删除
-      del (addressId, i) {
-        addressDel({addressId}).then(res => {
+      del (_id, i) {
+        productDel({_id}).then(res => {
           if (res.status === '0') {
             this.addList.splice(i, 1)
           } else {
